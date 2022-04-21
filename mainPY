@@ -1,0 +1,27 @@
+
+basamak:float = 1
+################################################
+input1 = int(input("Please enter a number: "))
+total = []
+n = 1
+lambdacalculator = lambda x: (x - 3) / x ** 2
+
+while n <= input1:
+    total.append(lambdacalculator(n))
+    n = n + 1
+
+totalofList = sum(total)
+print(totalofList)
+
+
+def secondcalc(number):
+    global basamak
+    if number == 0:
+        return 1
+    else:
+        basamak = (number / (number + 2)) - 10
+        return float(secondcalc(number - 1) * basamak)
+
+print("Please input second number: ")
+number = int(input())
+print(secondcalc(number).__doc__)
